@@ -37,20 +37,20 @@ It combines **offline reliability** with **online intelligence**, giving you a t
 
 Follow these steps to set up and run Wednesday on your system.
 
-1️⃣ Clone the Repository
+### 1️⃣ **Clone the Repository**
 
 bash
 git clone https://github.com/SamarthSehgal/WEDNESDAY---Virtual-Assistant-Model.git
 cd WEDNESDAY---Virtual-Assistant-Model
 
-2️⃣ Create a Virtual Environment (Recommended)
+### 2️⃣ **Create a Virtual Environment (Recommended)**
 python -m venv venv
 # On Windows
 .\venv\Scripts\activate
 # On macOS/Linux
 source venv/bin/activate
 
-3️⃣ Install Dependencies
+### 3️⃣ **Install Dependencies**
 
 Install all required libraries listed in the requirements.txt file:
 
@@ -58,7 +58,7 @@ pip install -r requirements.txt
 
 If the file is missing, manually install the core dependencies (listed below in Section II).
 
-4️⃣ Load the ML Model
+### 4️⃣ **Load the ML Model**
 
 Ensure these files are placed in the project root directory:
 chat_model.h5
@@ -67,13 +67,13 @@ label_encoder.pkl
 
 These files are required for natural language understanding and intent classification.
 
-5️⃣ Run the Assistant
+### 5️⃣ **Run the Assistant**
 python main.py
 
 For the text-based version, use:
 python main_text.py
 
-🧩 Project Structure
+### 🧩 **Project Structure**
 WEDNESDAY---Virtual-Assistant-Model/
 │
 ├── main.py                  # Voice-based assistant
@@ -89,7 +89,7 @@ WEDNESDAY---Virtual-Assistant-Model/
 ├── logs/                    # Interaction logs generated automatically
 └── README.md                # Project documentation
 
-💾 Logging & Debugging
+### 💾 **Logging & Debugging**
 
 All assistant interactions are logged in:
 logs/assistant_log.txt
@@ -101,6 +101,6 @@ Each entry records:
 4.Final decision path (Intent / KB / Web)
 5.Timestamped response
 
-👨‍💻 Author
+### 👨‍💻 **Author**
 
 Samarth Sehgal
