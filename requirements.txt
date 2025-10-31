@@ -1,0 +1,20 @@
+# Core I/O
+speechrecognition
+pyttsx3
+pyaudio
+
+# ML/NLU Core
+tensorflow
+numpy
+sentence-transformers
+scikit-learn # Needed for label_encoder
+
+# Utilities & Data
+json
+datetime
+pyautogui
+webbrowser
+wikipedia
+requests
+
+# Note: pyaudio may require system-level installation of portaudio on some systems (e.g., 'brew install portaudio' on macOS).
