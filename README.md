@@ -1,68 +1,106 @@
-🌟 WEDNESDAY - Virtual-Assistant-Model
-WEDNESDAY is a desktop-based voice assistant that uses a Deep Learning model (TensorFlow/Keras) for Natural Language Understanding (NLU). Its core innovation is a hybrid architecture that provides reliable, hands-free functionality even without an internet connection.
+# 🌟 WEDNESDAY – Virtual Assistant Model
 
-Creating a good GitHub repository (repo) is key to showcasing your project. It needs a detailed README file that tells visitors exactly what the project is, how it works, and how to set it up.
+**WEDNESDAY** is a desktop-based intelligent voice assistant powered by **Deep Learning (TensorFlow/Keras)** for Natural Language Understanding (NLU).  
+It combines **offline reliability** with **online intelligence**, giving you a truly hybrid assistant that works seamlessly even without internet access.
 
-✨ Features
-Hybrid Operation: Core features (reminders, system control, local knowledge base) run offline, while complex queries (web searches, Wikipedia lookups) utilize the internet.
+---
 
-ML-Powered NLU: Uses a trained Keras model (chat_model.h5) for high-accuracy Intent Recognition to understand diverse user commands.
+## ✨ Features
 
-Offline Knowledge Base: Fast retrieval of internal, factual answers from a local knowledge base (general_knowledge_qa.csv).
+### 🔹 **Hybrid Operation**
+- Works **offline** for essential tasks (reminders, system control, and local knowledge base).  
+- Uses the **internet** for advanced queries like web searches and Wikipedia lookups.
 
-Task Automation: Utilizes voice commands to open applications and perform system tasks using libraries like pyautogui.
+### 🧠 **ML-Powered NLU**
+- Uses a trained **Keras model (`chat_model.h5`)** for high-accuracy **intent recognition**.  
+- Understands diverse voice and text-based commands.
 
-Caching: Implements a search caching mechanism (search_cache.json) to minimize repeat API calls and speed up responses.
+### 📘 **Offline Knowledge Base**
+- Fast retrieval of factual information from a local dataset (`general_knowledge_qa.csv`).  
+- Uses **semantic search** for context-aware question matching.
+
+### ⚙️ **Task Automation**
+- Perform desktop operations hands-free using commands like:
+  - “Open Calculator”
+  - “Increase volume”
+  - “Take a screenshot”
+- Built with `pyautogui` and `os` libraries for smooth automation.
+
+### ⚡ **Caching**
+- Implements a **search caching system (`search_cache.json`)** to:
+  - Minimize repeated API calls
+  - Increase web response speed
+
+---
 
 🛠️ Installation & Setup
-To run WEDNESDAY locally, follow these steps:
 
-1. Clone the Repository:
-   
-git clone [Your GitHub Link Here]
-cd WEDNESDAY-VoiceAssistant
+Follow these steps to set up and run Wednesday on your system.
 
-2. Create a Virtual Environment (Recommended):
+1️⃣ Clone the Repository
 
+bash
+git clone https://github.com/SamarthSehgal/WEDNESDAY---Virtual-Assistant-Model.git
+cd WEDNESDAY---Virtual-Assistant-Model
+
+2️⃣ Create a Virtual Environment (Recommended)
 python -m venv venv
 # On Windows
 .\venv\Scripts\activate
 # On macOS/Linux
 source venv/bin/activate
 
-3. Install Dependencies: Install all required libraries listed in the requirements.txt file (see Section II).
+3️⃣ Install Dependencies
+
+Install all required libraries listed in the requirements.txt file:
 
 pip install -r requirements.txt
 
-4. Load the ML Model: Ensure the trained model (chat_model.h5) and serialization files (tokenizer.pkl, label_encoder.pkl) are present in the project root.
+If the file is missing, manually install the core dependencies (listed below in Section II).
 
-5. Run the Assistant:
+4️⃣ Load the ML Model
 
+Ensure these files are placed in the project root directory:
+chat_model.h5
+tokenizer.pkl
+label_encoder.pkl
+
+These files are required for natural language understanding and intent classification.
+
+5️⃣ Run the Assistant
 python main.py
 
-II. Additional Essential Repository Files
-These files provide essential context and configuration for anyone using or reviewing your code.
+For the text-based version, use:
+python main_text.py
 
-This file lists the exact dependencies needed to recreate your environment(file included):
+🧩 Project Structure
+WEDNESDAY---Virtual-Assistant-Model/
+│
+├── main.py                  # Voice-based assistant
+├── main_text.py             # Text-based console assistant
+├── intents.json             # Intent training data
+├── chat_model.h5            # Trained NLU model
+├── tokenizer.pkl            # Tokenizer for preprocessing
+├── label_encoder.pkl        # Label encoder for class mapping
+├── knowledge_base.py        # Offline knowledge retrieval system
+├── internet_search_ddg.py   # Web search using DuckDuckGo API
+├── general_knowledge_qa.csv # Local dataset for knowledge base
+├── search_cache.json        # Caching for repeated searches
+├── logs/                    # Interaction logs generated automatically
+└── README.md                # Project documentation
 
-# Core I/O
-speechrecognition
-pyttsx3
-pyaudio
+💾 Logging & Debugging
 
-# ML/NLU Core
-tensorflow
-numpy
-sentence-transformers
-scikit-learn # Needed for label_encoder
+All assistant interactions are logged in:
+logs/assistant_log.txt
 
-# Utilities & Data
-json
-datetime
-pyautogui
-webbrowser
-wikipedia
-requests
+Each entry records:
+1.User input
+2.Intent classification & confidence score
+3.Knowledge base & semantic similarity scores
+4.Final decision path (Intent / KB / Web)
+5.Timestamped response
 
-# Note: pyaudio may require system-level installation of portaudio on some systems (e.g., 'brew install portaudio' on macOS).
+👨‍💻 Author
 
+Samarth Sehgal
